@@ -42,6 +42,8 @@ export default {
   letter-spacing: 10px;
   line-height: 2;
   margin-bottom: 30px;
+  animation: ComTam6a 3s infinite;
+  visibility: visible;
 }
 .imfko {
   border: 1px solid #fff;
@@ -49,11 +51,38 @@ export default {
   height: 50px;
   display: flex;
   align-items: center;
+  animation: ComTam6b 3s infinite;
+  visibility: visible;
+}
+.imfko:hover {
+  background-color: #fff;
+  color: rgba(160, 32, 246, 1);
+  transition: 1.5s;
 }
 .imfko a {
   color: var(--light-color);
   text-decoration: none;
   padding: 40px;
   letter-spacing: 3px;
+}
+@keyframes ComTam6a {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 2;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes ComTam6b {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 2;
+    transform: translate3d(0, 0, 0);
+  }
 }
 </style>

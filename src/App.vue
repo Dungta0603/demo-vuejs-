@@ -9,6 +9,7 @@
     <ComTam7></ComTam7>
     <ComTam8></ComTam8>
     <ComTam9></ComTam9>
+    <ComTam9a></ComTam9a>
     <ComTam10></ComTam10>
     <ComTam11></ComTam11>
     <ComTam12></ComTam12>
@@ -26,6 +27,7 @@ import ComTam6 from "./components/ComTam6.vue";
 import ComTam7 from "./components/ComTam7.vue";
 import ComTam8 from "./components/ComTam8.vue";
 import ComTam9 from "./components/ComTam9.vue";
+import ComTam9a from "./components/ComTam9a.vue";
 import ComTam10 from "./components/ComTam10.vue";
 import ComTam11 from "./components/ComTam11.vue";
 import ComTam12 from "./components/ComTam12.vue";
@@ -42,6 +44,7 @@ export default {
     ComTam7,
     ComTam8,
     ComTam9,
+    ComTam9a,
     ComTam10,
     ComTam11,
     ComTam12,
@@ -70,5 +73,6 @@ hr.we {
   background-color: rgba(160, 32, 246, 1);
   display: inline-block;
   border: none !important ;
+  margin: 20px;
 }
 </style>

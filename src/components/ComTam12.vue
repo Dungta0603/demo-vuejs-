@@ -127,4 +127,8 @@ export default {
   background-color: rgb(0 0 0 / 0%);
   margin-top: 30px;
 }
+.bth-ComTam12:hover {
+  background-color: rgba(160, 32, 246, 1);
+  color: #fff;
+}
 </style>
