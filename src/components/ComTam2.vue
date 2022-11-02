@@ -35,12 +35,36 @@ export default {
   margin-top: 290px;
 }
 .ComTam2-nava h1 {
-  font-size: 70px;
+  font-size: 100px;
+  font-weight: 600;
+  letter-spacing: 15px;
   margin-bottom: 10px;
+  animation: ComTam1a 3s infinite;
 }
 .ComTam2-nava h2 {
-  font-size: 50px;
-  margin-top: 10px;
-  font-weight: 100;
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: 20px;
+  animation: ComTam1b 3s infinite;
+}
+@keyframes ComTam1a {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    opacity: 2;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes ComTam1b {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 2;
+    transform: translate3d(0, 0, 0);
+  }
 }
 </style>
