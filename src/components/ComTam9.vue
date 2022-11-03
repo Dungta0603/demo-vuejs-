@@ -4,21 +4,26 @@
       <h1>OUR PORTFOLIO</h1>
       <hr class="we" />
       <div class="ComTam9-contona">
-        <a v-for="(ComTam9a, index) in ComTam9a" v-bind:key="index" href=""
-          >{{ ComTam9a.title }}
-        </a>
-      </div>
-    </div>
-    <div class="ComTam9-nav2">
-      <div
-        v-for="(ComTam9b, index) in ComTam9b"
-        v-bind:key="index"
-        class="project"
-      >
-        <img :src="ComTam9b.imga" alt="img" />
-        <div class="cont">
-          <h2>{{ ComTam9b.titll1 }}</h2>
-          <h3>{{ ComTam9b.titll2 }}</h3>
+        <div id="list-complete-demo" class="demo">
+          <div class="demo-cv">
+            <button v-on:click="filter('all')">All</button>
+            <button v-on:click="filter('tag1')">Graphic Design</button>
+            <button v-on:click="filter('tag2')">Web Design</button>
+            <button v-on:click="filter('tag3')">Web Development</button>
+          </div>
+          <div name="list-complete" class="list-complete" tag="section">
+            <div
+              v-for="item in filteredItems"
+              v-bind:key="item.id"
+              class="list-complete-item"
+            >
+              <img class="list-complete-img" v-bind:src="item.imga" />
+              <div class="cont">
+                <h2>{{ item.titll1 }}</h2>
+                <h3>{{ item.titll2 }}</h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -42,70 +47,86 @@ export default {
   name: "ComTam9",
   data: function () {
     return {
-      ComTam9a: [
-        { id: "1", title: "All" },
-        { id: "2", title: "Graphic Design" },
-        { id: "3", title: "Web Design" },
-        { id: "4", title: "Web Development " },
-      ],
-      ComTam9b: [
+      items: [
         {
-          id: "1",
+          id: 1,
+          tags: ["all", "tag1"],
           imga: require("../assets/img/img_OUR PORTFOLIO/work1.jpeg"),
           titll1: "Project #1 ",
           titll2: "Project Description ",
         },
         {
-          id: "2",
+          id: 2,
+          tags: ["all", "tag2", "tag3"],
           imga: require("../assets/img/img_OUR PORTFOLIO/work2.jpeg"),
           titll1: "Project #2 ",
           titll2: "Project Description ",
         },
         {
-          id: "3",
+          id: 3,
+          tags: ["all", "tag2"],
           imga: require("../assets/img/img_OUR PORTFOLIO/work3.jpeg"),
           titll1: "Project #3 ",
           titll2: "Project Description ",
         },
         {
-          id: "4",
+          id: 4,
+          tags: ["all", "tag1", "tag3"],
           imga: require("../assets/img/img_OUR PORTFOLIO/work4.jpeg"),
           titll1: "Project #4 ",
           titll2: "Project Description ",
         },
         {
-          id: "5",
+          id: 5,
+          tags: ["all", "tag1", "tag3"],
           imga: require("../assets/img/img_OUR PORTFOLIO/work5.jpeg"),
           titll1: "Project #5 ",
           titll2: "Project Description ",
         },
         {
-          id: "6",
+          id: 6,
+          tags: ["all", "tag2"],
           imga: require("../assets/img/img_OUR PORTFOLIO/work6.jpeg"),
           titll1: "Project #6 ",
           titll2: "Project Description ",
         },
         {
-          id: "7",
+          id: 7,
+          tags: ["all", "tag1", "tag3"],
           imga: require("../assets/img/img_OUR PORTFOLIO/work7.jpeg"),
           titll1: "Project #7 ",
           titll2: "Project Description ",
         },
         {
-          id: "8",
+          id: 8,
+          tags: ["all", "tag2"],
           imga: require("../assets/img/img_OUR PORTFOLIO/work8.jpeg"),
           titll1: "Project #8 ",
           titll2: "Project Description ",
         },
       ],
+      currentTag: "all",
     };
+  },
+  computed: {
+    filteredItems: function () {
+      var filter = this.currentTag;
+      return this.items.filter(function (item) {
+        return item.tags.indexOf(filter) !== -1;
+      });
+    },
+  },
+  methods: {
+    filter: function (tag) {
+      this.currentTag = tag;
+    },
   },
 };
 </script>
 
 <style scoped>
 .ComTam9 {
-  height: 1500px;
+  height: 2000px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -118,11 +139,7 @@ export default {
   justify-content: center;
   flex-direction: column;
 }
-.ComTam9-contona {
-  height: 300px;
-  display: flex;
-  align-items: center;
-}
+
 .ComTam9-nav1 h1 {
   margin: 15px;
   letter-spacing: 5px;
@@ -131,35 +148,50 @@ export default {
   font-weight: 500;
   line-height: 1.2;
 }
-.ComTam9-contona a {
+.ComTam9-contona button {
   text-decoration: none;
   margin: 20px;
   font-size: 16px;
   line-height: 2;
   letter-spacing: 1px;
   color: rgb(119, 119, 119);
+  outline: none;
+  border: 0;
+  background-color: rgb(255, 255, 255);
 }
-.ComTam9-nav2 {
+.demo-cv {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
 }
-.project {
+#list-complete-demo {
+  display: flex;
+  flex-direction: column;
+}
+.list-complete {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.list-complete-item {
   position: relative;
 }
-.project img {
+img {
   width: 360px;
   height: 230px;
 }
 :hover.cont {
   opacity: 0.9;
 }
-.project:hover.cont {
+.list-complete-item:hover.cont {
   opacity: 0.9;
 }
-.project:hover h2 {
+.list-complete-item:hover h2 {
   animation: hiv1 1s;
 }
-.project:hover h3 {
+.list-complete-item:hover h3 {
   animation: hiv2 1s;
 }
 .we {
