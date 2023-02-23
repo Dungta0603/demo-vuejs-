@@ -1,19 +1,19 @@
 <template>
   <div id="add">
-    <ComTam1></ComTam1>
-    <ComTam2></ComTam2>
-    <ComTam3></ComTam3>
-    <ComTam4></ComTam4>
-    <ComTam5></ComTam5>
-    <ComTam6></ComTam6>
-    <ComTam7></ComTam7>
-    <ComTam8></ComTam8>
-    <ComTam9></ComTam9>
-    <ComTam9a></ComTam9a>
-    <ComTam10></ComTam10>
-    <ComTam11></ComTam11>
-    <ComTam12></ComTam12>
-    <ComTam13></ComTam13>
+    <ComTam1 />
+    <ComTam2 />
+    <ComTam3 />
+    <ComTam4 />
+    <ComTam5 />
+    <ComTam6 />
+    <ComTam7 />
+    <ComTam8 />
+    <ComTam9 />
+    <ComTam9a />
+    <ComTam10//>
+    <ComTam11 />
+    <ComTam12 />
+    <ComTam13 />
   </div>
 </template>
 
